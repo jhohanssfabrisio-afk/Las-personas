@@ -1,6 +1,6 @@
 package Datos;
 import java.io.*;
-
+import java.util.Scanner;
 import Logica.Persona;
 public class Escritor {
 	private String nombre_archivo="personas";
@@ -23,11 +23,20 @@ public class Escritor {
 	}
 	public void guardar(Persona persona){
 		try {
+			File archivo=new File(this.nombre_archivo);
 			FileWriter write=new FileWriter(this.nombre_archivo);
+			Scanner scan=new Scanner(archivo);
+			String variable;
+			while(scan.hasNextLine()){
+				variable=scan.nextLine();
+				write.write(variable+"\n");
+			}
+			write.close();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			System.out.println("Erorr en la paertura del archivo");
+			}
 		
 	}
 }
