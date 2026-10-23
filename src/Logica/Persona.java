@@ -1,7 +1,10 @@
 package Logica;
 import Logica.Leer;
+
+import java.io.Serializable;
+
 import Datos.Escritor;
-public class Persona {
+public class Persona implements Serializable{
 	private String nombre;
 	private int hora;
 	private int tramos;
@@ -61,4 +64,8 @@ public class Persona {
 		Escritor escribir=new Escritor();
 		escribir.guardar_dt(this);
 	}
+	public void crear_bin() {
+		
+	}
+	//
 }
