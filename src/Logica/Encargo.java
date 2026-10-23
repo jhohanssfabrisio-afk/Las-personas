@@ -1,5 +1,7 @@
 package Logica;
 
+import Datos.Creador;
+
 public class Encargo {
 	private String hora;
 	private int tiempo_minutos;
@@ -34,9 +36,5 @@ public class Encargo {
 	}
 	public void setNombre(String nombre) {
 		Nombre = nombre;
-	}
-	public void crear_archivo() {
-		Creador bin=new Creador("datos");
-		
 	}
 }

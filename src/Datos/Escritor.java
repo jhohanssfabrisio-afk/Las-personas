@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.Scanner;
 import Logica.Persona;
 public class Escritor {
-	private String nombre_archivo="personas";
+	private String nombre_archivo="personas.txt";
 	
 	public Escritor() {
 	}
@@ -18,25 +18,24 @@ public class Escritor {
 			file.createNewFile();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("error en la creacion del archivo");
 		}
 	}
-	public void guardar(Persona persona){
+	public void guardar_dt(Persona persona){
 		try {
-			File archivo=new File(this.nombre_archivo);
 			FileWriter write=new FileWriter(this.nombre_archivo);
-			Scanner scan=new Scanner(archivo);
-			String variable;
-			while(scan.hasNextLine()){
-				variable=scan.nextLine();
-				write.write(variable+"\n");
-			}
+			write.write(persona.getNombre());
+			write.write(String.valueOf(persona.getHora()));
+			write.write(String.valueOf(persona.getTramos()));
+			write.write(persona.getDestino());
+			
 			write.close();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("Erorr en la paertura del archivo");
 			}
-		
+		finally {
+		}
 	}
 }

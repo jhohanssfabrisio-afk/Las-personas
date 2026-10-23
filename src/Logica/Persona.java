@@ -50,6 +50,7 @@ public class Persona {
 		this.hora=leer.leer_entero();
 		System.out.println("Ingresa tu tramo:");
 		this.tramos=leer.leer_entero();
+		leer.leer_String();
 		System.out.println("Ingresa tu destino:");
 		this.destino=leer.leer_String();
 	}
@@ -58,7 +59,6 @@ public class Persona {
 	}
 	public void guardar() {
 		Escritor escribir=new Escritor();
-		escribir.crear();
-		escribir.guardar(this);
+		escribir.guardar_dt(this);
 	}
 }
